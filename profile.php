@@ -58,7 +58,7 @@ $user = $dbh->getUserByUsername($userName);  //test db usage... Lisa
                         echo '</form>';
                         if (isset($_POST['friend']))
                         {
-                            $dbh->requestFriend($_SESSION['user_id'], $user->user_id);
+                            $dbh->requestFriend($user->user_id, $_SESSION['user_id']);
                         }
                     }
                 }

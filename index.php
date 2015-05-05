@@ -4,7 +4,6 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 // end error reporting
-
 $title = "Home";
 
 session_name("SocialNetwork");
@@ -18,30 +17,15 @@ include("./php/inc/header.php");
 ?>
 
 <div class="leftContent">
-    <h2>Welcome to PomerFurball Social Network</h2>
+    <h2>CT310 Federation</h2>
+	<script type="text/javascript" src='ajax/federation.js'></script>
+	<script type="text/javascript">	
+   		window.onload = init;
+   		var loggedon = '1';
+	</script>
+    <p><table id="federation"></table></p>
 
-    <p>PomerFurball is a social network founded by group 7... Suspendisse sodales accumsan erat a luctus. Nulla interdum
-        elit vitae ultricies commodo. Suspendisse dignissim dolor vel accumsan hendrerit. Cras pharetra suscipit odio,
-        quis pharetra nunc dignissim ultrices. Integer consectetur gravida fermentum. Ut tempus sem vel libero mollis,
-        tincidunt vulputate leo fringilla. Proin ut orci vulputate, condimentum orci eu, convallis dolor. Quisque
-        mattis, diam vitae elementum rutrum, turpis orci rutrum orci, vel maximus felis sapien sit amet nisl. Aliquam
-        lacinia nisl eu pulvinar accumsan. Proin quis nisl sed nisi placerat molestie. In sagittis rhoncus mauris et
-        hendrerit. Nunc vitae augue nec ante fermentum rutrum. In hac habitasse platea dictumst. Ut sit amet quam
-        nulla.</p>
-
-    <hr/>
-
-    <h2>Feed</h2>
-
-    <p>X is now friend of Y... Suspendisse sodales accumsan erat a luctus. Nulla interdum elit vitae ultricies commodo.
-        Suspendisse dignissim dolor vel accumsan hendrerit. Cras pharetra suscipit odio, quis pharetra nunc dignissim
-        ultrices. Integer consectetur gravida fermentum. Ut tempus sem vel libero mollis, tincidunt vulputate leo
-        fringilla. Proin ut orci vulputate, condimentum orci eu, convallis dolor. Quisque mattis, diam vitae elementum
-        rutrum, turpis orci rutrum orci, vel maximus felis sapien sit amet nisl. Aliquam lacinia nisl eu pulvinar
-        accumsan. Proin quis nisl sed nisi placerat molestie. In sagittis rhoncus mauris et hendrerit. Nunc vitae augue
-        nec ante fermentum rutrum. In hac habitasse platea dictumst. Ut sit amet quam nulla.</p>
-
-    <hr/>
+  
 </div>
 
 <?php include_once("php/inc/rightContent.php"); ?>
