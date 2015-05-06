@@ -77,7 +77,7 @@ $errors = array();
 
         </div>
 
-        <input type="submit" class="btn btn-info"/>
+        <input type="submit" class="btn btn-info" value="Login"/>
 
     </form>
 </div>

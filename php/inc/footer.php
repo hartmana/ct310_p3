@@ -2,11 +2,11 @@
 </main>
 <footer>
     <p>2015 © Copyright Group 7</p>
-    <img id="logo2" src="images/logo.gif" alt="dog logo">
     <?php
     if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
     {
-        ?><p>Logged in for: <?php echo(time() - $_SESSION['starttime']); ?> seconds.</p><?php
+        ?><p>Logged in for: <?php echo(time() - $_SESSION['starttime']); ?> seconds.</p>
+    <?php
     }
     ?>
 

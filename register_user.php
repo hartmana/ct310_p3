@@ -59,73 +59,84 @@ include("./php/inc/header.php");
     } //End if count($errors);
     ?>
     <form method="post" action="./register_user.php">
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required/>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required/>
-        </div>
-        <div class="form-group">
-            <label for="usertype">User Type:</label>
-            <select id="usertype" name="usertype" required>
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="firstname">First Name:</label>
-            <input type="text" id="firstname" name="firstname" required/>
-        </div>
-        <div class="form-group">
-            <label for="lastname">Last Name:</label>
-            <input type="text" id="lastname" name="lastname" required/>
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender:</label>
-            <select name="gender">
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="na">N/A</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="mobile">Mobile number:</label>
-            <input type="text" id="mobile" name="mobile" required/>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required/>
-        </div>
-        <div class="form-group">
-            <label for="question">Question:</label>
-            <select name="question">
-                <option value="">Select</option>
-                <?php
-                $count = 1;
-                $questions = $dbh->getQuestionArray();
-                foreach ($questions as $question)
-                {
-                    ?>
-                    <option value="<?php echo $count; ?>"><?php echo $question; ?></option>;
-                    <?php $count++;
-                }
-                ?>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="questionanswer">Question Answer:</label>
-            <input type="text" id="questionanswer" name="questionanswer" required/>
-        </div>
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <input type="text" id="description" name="description" required/>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-info"/>
-        </div>
+        <fieldset>
+            <legend>Create User</legend>
+            <table class="form-table">
+                <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td><input type="text" id="username" name="username" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" name="password" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="usertype">User Type:</label></td>
+                    <td>
+                        <select id="usertype" name="usertype" required>
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="firstname">First Name:</label></td>
+                    <td><input type="text" id="firstname" name="firstname" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="lastname">Last Name:</label></td>
+                    <td><input type="text" id="lastname" name="lastname" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender:</label></td>
+                    <td>
+                        <select name="gender">
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="na">N/A</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="mobile">Mobile number:</label></td>
+                    <td><input type="text" id="mobile" name="mobile" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="text" id="email" name="email" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="question">Question:</label></td>
+                    <td>
+                        <select name="question">
+                            <option value="">Select</option>
+                            <?php
+                            $count = 1;
+                            $questions = $dbh->getQuestionArray();
+                            foreach ($questions as $question)
+                            {
+                                ?>
+                                <option value="<?php echo $count; ?>"><?php echo $question; ?></option>;
+                                <?php $count++;
+                            }
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="questionanswer">Question Answer:</label></td>
+                    <td><input type="text" id="questionanswer" name="questionanswer" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="description">Description:</label></td>
+                    <td><input type="text" id="description" name="description" required/></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="btn btn-info" value="Register User"/></td>
+                </tr>
+            </table>
+        </fieldset>
     </form>
 </div>
 

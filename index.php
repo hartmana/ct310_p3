@@ -18,14 +18,16 @@ include("./php/inc/header.php");
 
 <div class="leftContent">
     <h2>CT310 Federation</h2>
-	<script type="text/javascript" src='ajax/federation.js'></script>
-	<script type="text/javascript">	
-   		window.onload = init;
-   		var loggedon = '1';
-	</script>
-    <p><table id="federation"></table></p>
+    <script type="text/javascript" src='ajax/federation.js'></script>
+    <script type="text/javascript">
+        window.onload = init;
+        var loggedon = '1';
+    </script>
+    <p>
+    <table id="federation"></table>
+    </p>
 
-  
+
 </div>
 
 <?php include_once("php/inc/rightContent.php"); ?>

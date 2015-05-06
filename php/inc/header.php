@@ -24,18 +24,15 @@ $dbh = new DBHelper();
 <div id="wrap">
     <header class="container-fluid">
         <div class="row">
-            <div class="col-lg-1 col-md-1 hidden-xs">
-                <a href="index.php"> <img id="logo" src="images/logo.gif" alt="dog logo"> </a>
-            </div>
             <div class="col-md-7">
-                <a href="index.php"><h2>PomerFurball </h2></a><br><br>
+                <a href="index.php"><h2>1337</h2></a><br><br>
                 <h4>  <?php echo "  the Social Network >> " . $title; ?> </h4>
             </div>
-            <div class="col-md-4">
+            <div id="nav">
                 <nav>
                     <ul>
-                        <li><a href="index.php">HOME</a></li>
-                        <li><a href="search.php">SEARCH</a></li>
+                        <li><a href="index.php">./home</a></li>
+                        <li><a href="search.php">./search</a></li>
 
                         <?php
                         if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
@@ -44,7 +41,7 @@ $dbh = new DBHelper();
                             if (count($pending) > 0)
                             {
                                 ?>
-                                <li><a id="friend-requests" href="./friend_requests.php">Requests</a></li>
+                                <li><a id="friend-requests" href="./friend_requests.php">./requests</a></li>
                             <?php
                             }
                         }
@@ -52,7 +49,7 @@ $dbh = new DBHelper();
                         {
                             // add link to register users (isAdmin = true)
                             ?>
-                            <li><a id="register-user" href="./register_user.php">Register</a></li>
+                            <li><a id="register-user" href="./register_user.php">./register</a></li>
                         <?php
                         } ?>
 
@@ -60,18 +57,22 @@ $dbh = new DBHelper();
                         if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
                         ?>
                     </ul>
-                    <ul>
-                        <li>Logged in as <a href="profile.php?user=<?php echo $_SESSION['user_name'];?>">
-                                <?php echo $_SESSION['user_name'];?></a></li>
-                        <li><a href="./logout.php">Log out </a></li>
+                </nav>
+            </div>
+            <div id="logged-in-nav">
+
+                <ul>
+                    <li>Logged in as <a href="profile.php?user=<?php echo $_SESSION['user_name'];?>">
+                            <?php echo $_SESSION['user_name'];?></a></li>
+                    <li><a class="last" href="./logout.php">./quit </a></li>
+                    <?php
+                    }else{
+                    ?>
+                    <li><a href="./login.php">/login</a>
                         <?php
-                        }else{
+                        }
                         ?>
-                        <li><a href="./login.php">Login</a>
-                            <?php
-                            }
-                            ?>
-                    </ul>
+                </ul>
                 </nav>
             </div>
         </div>

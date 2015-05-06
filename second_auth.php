@@ -74,7 +74,7 @@ if (count($errors) > 0)
 				<input type="text" id="answer" name="answer" required  />
 			</div class="form-group">
 			<div>
-				<input type="submit" class="btn btn-info"/>
+				<input type="submit" class="btn btn-info" value="Answer" />
 			</div>
 		</form>
 	</div>

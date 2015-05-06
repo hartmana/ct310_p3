@@ -27,7 +27,7 @@ html, body {
 }
 
 body {
-    background: #FFF2E7;
+    background: #66A3D2;
     font-family: "normal", Arial;
     font-size: 12px;
     line-height: 20px;
@@ -37,7 +37,8 @@ body {
 /*HEADER*/
 
 header {
-    background: #32313f;
+    /*background: #32313f;*/
+    background: #033E6B;
     width: 100%;
     margin: 0vh 0vh;
     padding: 2vh 0vh 0vh 0vh;
@@ -64,9 +65,10 @@ header h2, header h4 {
 }
 
 header h2 {
-    font-family: title;
+    font-family: slim;
     font-size: 45px;
-    color: #ff9933;
+    /*color: #ff9933;*/
+    color: #66A3D2;
     padding-left: 20px;
 }
 
@@ -85,22 +87,23 @@ nav ul {
 
 nav ul li {
     display: inline;
-    font-size: 18px;
+    /*font-size: 18px;*/
     font-weight: bold;
-    color: red;
+    color: #66A3D2;
     /*padding:14px 15px 10px 15px;*/
 }
 
 nav a {
     color: #ff9933;
-    font-size: 15px;
+    font-size: 10pt;
     text-decoration: none;
     padding: 14px 15px 10px 15px;
 }
 
 nav a:hover {
-    background: #ffccff;
-    color: #000033;
+    /*background: #ffccff;*/
+    color: #66A3D2;
+    text-decoration: none;
 }
 
 nav a:active {
@@ -109,6 +112,86 @@ nav a:active {
 
 nav a:visited {
     background: none;
+}
+
+#logged-in-nav {
+    float: right;
+    margin-left: 20px;
+    /*margin-top: 30px;*/
+    display: inline-block;
+    font-size: 8pt;
+}
+
+#logged-in-nav ul {
+    list-style: none;
+    margin-left: 20px;
+    /*padding-top: 2vh;*/
+}
+
+#logged-in-nav ul li {
+    display: inline;
+    font-size: 8pt;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#logged-in-nav a {
+    color: #ff9933;
+    font-size: 8pt;
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 5px;
+
+}
+
+#logged-in-nav a.last {
+    color: #ff9933;
+    font-size: 8pt;
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 20px;
+}
+
+#logged-in-nav a:hover {
+    /*background: #ffccff;*/
+    color: #66A3D2;
+    text-decoration: none;
+}
+
+#logged-in-nav a:active {
+    background: rgb(102, 119, 164);
+}
+
+#logged-in-nav a:visited {
+    background: none;
+}
+
+#federation {
+
+}
+
+#federation a {
+    color: #033E6B;
+    font-size: 15px;
+    text-decoration: none;
+
+    padding-left: 15px;
+}
+
+#federation a:hover {
+    color: #FFFFFF;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+table.form-table td {
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+table.form-table td.last {
+    padding-top: 10px;
+    padding-left: 5px;
 }
 
 .content {
@@ -271,7 +354,7 @@ footer {
     clear: both;
     color: #FFF2E7;
     font-size: 12px;
-    background: #32313f;
+    background: #0B61A4;
     padding-left: 30px;
     padding-right: 30px;
     margin-bottom: -10px;
@@ -279,6 +362,7 @@ footer {
     width: 100%;
     height: 80px;
     position: absolute;
+    text-align: center;
     bottom: 0;
 
 }
@@ -365,7 +449,7 @@ div.wrap-textarea input[type=submit]:hover, input[type=button]:hover {
 
 div.save-success {
     color: rgb(247, 238, 238);
-    background: #FFD6FF;
+    background: #66A3D2;
     padding: 12px;
     float: right;
 }
