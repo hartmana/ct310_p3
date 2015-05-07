@@ -1,7 +1,7 @@
 </div> <!-- end content-->
 </main>
 <footer>
-    <p>2015 © Copyright Group 7</p>
+    <p>2015 © Copyright Group 1337</p>
     <?php
     if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
     {

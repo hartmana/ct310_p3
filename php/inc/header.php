@@ -25,7 +25,9 @@ $dbh = new DBHelper();
     <header class="container-fluid">
         <div class="row">
             <div class="col-md-7">
-                <a href="index.php"><h2>1337</h2></a><br><br>
+                <h2>1337</h2>
+                <img src="/images/l33t-logo-small.png" height="250" width="200" alt="L33T">
+                <a href="index.php"> </a><br><br>
                 <h4>  <?php echo "  the Social Network >> " . $title; ?> </h4>
             </div>
             <div id="nav">
