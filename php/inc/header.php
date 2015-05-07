@@ -26,9 +26,9 @@ $dbh = new DBHelper();
         <div class="row">
             <div class="col-md-7">
                 <h2>1337</h2>
-                <img src="/images/l33t-logo-small.png" height="250" width="200" alt="L33T">
-                <a href="index.php"> </a><br><br>
-                <h4>  <?php echo "  the Social Network >> " . $title; ?> </h4>
+                <!--                <img id="logo" src="images/l33t-logo-small.png" width="300" height="200" alt="L33T S4UC3" />-->
+                <a href="index.php"> </a><br><br><br><br>
+                <h4>  <?php echo "  pwd | " . $title; ?> </h4>
             </div>
             <div id="nav">
                 <nav>
@@ -70,7 +70,7 @@ $dbh = new DBHelper();
                     <?php
                     }else{
                     ?>
-                    <li><a href="./login.php">/login</a>
+                    <li><a href="./login.php">./login</a>
                         <?php
                         }
                         ?>
