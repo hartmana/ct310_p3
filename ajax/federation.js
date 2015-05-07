@@ -32,7 +32,6 @@ function sitesToTable(sites) {
         var addr = sites[j].url;
         var last = addr.lastIndexOf("/");
         addr = addr.substring(0, last + 1);
-        //var rt = "<tr> <td> " + sites[j].shortname + " </td> <td>" + sites[j].longname + "</td> <td> <a href='" + addr + "'>" + addr + "</a></td> </tr>";
         var rt = "<tr> <td> " + sites[j].name + " </td> <td> <a href='" + addr + "'>" + addr + "</a></td> </tr>";
         var rr = tab.insertRow(i);
         rr.innerHTML = rt;
