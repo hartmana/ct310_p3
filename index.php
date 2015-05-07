@@ -15,18 +15,17 @@ require_once "./php/lib/dbhelper.php";
 include("./php/inc/header.php");
 // end all page head
 ?>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src='ajax/federation.js'></script>
+<script type="text/javascript">
+        window.onload = init;
+        var loggedon = '1';
+</script>
 
 <div class="leftContent">
     <h2>CT310 Federation</h2>
-    <script type="text/javascript" src='ajax/federation.js'></script>
-    <script type="text/javascript">
-        window.onload = init;
-        var loggedon = '1';
-    </script>
-    <p>
-    <table id="federation"></table>
-    </p>
-
+    
+    <table id='federation'></table>
 
 </div>
 
