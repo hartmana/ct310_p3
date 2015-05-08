@@ -15,19 +15,29 @@ require_once "./php/lib/dbhelper.php";
 include("./php/inc/header.php");
 // end all page head
 ?>
-
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src='ajax/federation.js'></script>
-<script type="text/javascript">
-        window.onload = init;
-        var loggedon = '1';
-</script>
 
-<div class="leftContent">
-    <h2>CT310 Federation</h2>
-    
-    <table id='federation'></table>
+<?php
 
-</div>
+if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
+	
+	echo "<script type=\"text/javascript\">
+		window.onload = init;
+		var loggedon = '1';
+	</script>
+	
+	<div class=\"leftContent\">
+   	<h2>CT310 Federation</h2> 
+   	<table id='federation'></table>
+	</div>"
+	
+	} else {
+	
+	echo '<h2>You must be logged in to view the Federation!</h2>'
+	
+	}
+	
+?>
 
 <?php include("php/inc/footer.php"); ?>
