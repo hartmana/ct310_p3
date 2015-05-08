@@ -34,6 +34,7 @@ $dbh = new DBHelper();
                 <nav>
                     <ul>
                         <li><a href="index.php">./home</a></li>
+                        <li><a href="federation.php">./federation</a></li>
                         <li><a href="search.php">./search</a></li>
 
                         <?php
