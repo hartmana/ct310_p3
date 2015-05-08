@@ -25,8 +25,8 @@ include("./php/inc/header.php");
 if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
 	
 	echo "<script type=\"text/javascript\">
-		window.onload = init;
 		var loggedon = '1';
+		window.onload = init;
 	</script>
 	
 	<div class=\"leftContent\">
@@ -42,5 +42,7 @@ if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
 	
 ?>
 </div>
+
+
 
 <?php include("php/inc/footer.php"); ?>

@@ -11,7 +11,7 @@ if (navigator.appName == "Microsoft Internet Explorer") {
     p = new XMLHttpRequest();
 }
 
-/*NOT TESTED*/
+/*working*/
 function getSites() {
     http.open("POST", url, true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -30,8 +30,7 @@ function sitesToTable(sites) {
     var i = tab.rows.length;
     for (j = 0; j < sites.length; j++) {
         var addr = sites[j].url;
-        var last = addr.lastIndexOf("/");
-        addr = addr.substring(0, last + 1);
+    
         var rt = "<tr> <td> " + sites[j].name + " </td> <td> <a href='" + addr + "'>" + addr + "</a></td> </tr>";
         var rr = tab.insertRow(i);
         rr.innerHTML = rt;

@@ -52,6 +52,7 @@ class DBHelper
     {
         print_r("INIT BEGIN");
         $dbh = new PDO('sqlite:./php/db/socialnetwork.db');
+       
         $dbh->exec("CREATE TABLE IF NOT EXISTS Users (user_id INTEGER PRIMARY KEY ASC, user_name TEXT,
 					user_type TEXT, first_name TEXT, last_name TEXT, gender TEXT, mobile TEXT, email TEXT, 
 					password TEXT, question_id INTEGER, question_answer TEXT, logged_in_status INTEGER, 
