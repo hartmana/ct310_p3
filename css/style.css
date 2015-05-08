@@ -168,8 +168,16 @@ nav a:visited {
     background: none;
 }
 
-#federation {
+#federation{
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+#purpose{
+	width: 92%;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 #federation a {

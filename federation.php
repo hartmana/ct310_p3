@@ -4,7 +4,7 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 // end error reporting
-$title = "Home";
+$title = "Federation";
 
 session_name("SocialNetwork");
 session_start();
@@ -15,9 +15,11 @@ require_once "./php/lib/dbhelper.php";
 include("./php/inc/header.php");
 // end all page head
 ?>
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src='ajax/federation.js'></script>
 
+<div class="leftContent">
 <?php
 
 if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
@@ -30,14 +32,15 @@ if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
 	<div class=\"leftContent\">
    	<h2>CT310 Federation</h2> 
    	<table id='federation'></table>
-	</div>"
+	</div>";
 	
 	} else {
 	
-	echo '<h2>You must be logged in to view the Federation!</h2>'
+	echo '<h2>You must be logged in to view the Federation!</h2>';
 	
 	}
 	
 ?>
+</div>
 
 <?php include("php/inc/footer.php"); ?>
