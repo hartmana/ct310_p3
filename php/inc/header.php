@@ -25,9 +25,9 @@ $dbh = new DBHelper();
     <header class="container-fluid">
         <div class="row">
             <div class="col-md-7">
-                <h2>1337</h2>
-                <!--                <img id="logo" src="images/l33t-logo-small.png" width="300" height="200" alt="L33T S4UC3" />-->
-                <a href="index.php"> </a><br><br><br><br>
+                <a href="index.php"> <img id="logo" src="images/l33t-logo-small.png" width="300" height="200"
+                                          alt="L33T S4UC3"/></a>
+                <br>
                 <h4>  <?php echo "  pwd | " . $title; ?> </h4>
             </div>
             <div id="nav">
