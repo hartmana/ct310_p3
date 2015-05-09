@@ -26,15 +26,9 @@ function getSites() {
 				}
 				if(!sites[j].url.startsWith("http")){
 					sites[j].url = "http://" + sites[j].url;
-				}
-				
-				if (loggedon == 1){
-					site = "onmouseover=\"showPurpose(this)\" onmouseout=\"delPurpose()\"";
-				} else {
-					document.getElementById("purpose").innerHTML = "Login to see purposes.";
-					site = "";
-				}
-				tab += '<a href="' + sites[j].url + '"' + site + '>' + sites[j].name + </a><br>';
+				}							
+				site = "onmouseover=\"showPurpose(this)\" onmouseout=\"delPurpose()\"";
+				tab += '<a href="' + sites[j].url + '"' + site + '>' + sites[j].name + '</a><br>';
 			}
 			document.getElementById("federation").innerHTML = tab;
 		}
