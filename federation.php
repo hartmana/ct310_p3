@@ -25,9 +25,8 @@ include("./php/inc/header.php");
 
 if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
 	
-	echo "<table id='purpose' style=\"display: none\"></table>
-	<script type=\"text/javascript\">
-		var loggedon = '1';
+	echo "<script type=\"text/javascript\">
+		var loggedon = 1;
 		window.onload = init;
 	</script>
 	
@@ -35,7 +34,7 @@ if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
    	<h2>CT310 Federation</h2> 
    	
    	<table id='federation'></table>
-   	
+   	<table id='purpose' style=\"display: none\"></table>
 	</div>";
 	
 	} else {

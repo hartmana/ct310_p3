@@ -34,10 +34,6 @@ function sitesToTable(sites) {
         var rr = tab.insertRow(i);
         rr.innerHTML = rt;
     }
-
-    if (loggedon) {
-        hover();
-    }
 }
 
 /*NOT TESTED*/
@@ -64,6 +60,7 @@ function leave() {
     document.getElementById('purpose').deleteRow(1);
     document.getElementById('purpose').deleteRow(2);
 }
+
 /*NOT TESTED*/
 function getPurpose() {
     
@@ -71,13 +68,13 @@ function getPurpose() {
     var sites = JSON.parse(http.responseText);
     
     for (i = 0; i < sites.length; i++){
-    	id = sites[i].url;
+    	id = sites[i].url+'/purpose.php';
     	http.open("POST", id, true);
     	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     	http.onreadystatechange = function () {
     		if (http.readyState == 4){
     			id = JSON.parse(http.responseText);
-    			purposeToTable(id.purpose);
+    			purposeToTable(sites, id.purpose);
     		} else {
     			purposeToTable("Purpose not accessible!");
     		}
@@ -87,13 +84,17 @@ function getPurpose() {
 }
 
 /*NOT TESTED*/
-function purposeToTable(purpose) {
-    var row;
-    row = document.createElement('tr');
-    var cell = document.createElement('td');
-    cell.innerHTML = purpose;
-    row.appendChild(cell);
-    document.getElementById('purpose').appendChild(row);
+function purposeToTable(sites, purpose) {
+    var tab = document.getElementById('purpose');
+    var i = tab.rows.length;
+    for (j = 0; j < sites.length; j++) {
+    	var rt = "<tr><td>" + purpose + "</td></tr>";
+    	var rr = tab.insertRow(i);
+    	rr.innerHTML = rt;
+    }
+    if (loggedon){
+    	hover();
+    }
 }
 
 function init() {
