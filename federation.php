@@ -16,6 +16,9 @@ include("./php/inc/header.php");
 // end all page head
 ?>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src='ajax/federation.js'></script>
 
@@ -25,17 +28,19 @@ include("./php/inc/header.php");
 
 if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
 	
-	echo "<script type=\"text/javascript\">
-		var loggedon = 1;
+	echo "
+	<div class=\"leftContent\">
+   	
+   	<h2>CT310 Federation</h2> 
+   	<script type=\"text/javascript\">
+		loggedon = 1;
 		window.onload = init;
 	</script>
+   	<div id=\"purpose\">Hover over a group link and the purpose will be displayed.</div>
+   	<p id=\"federation\">Site name and URL</p>
+	</div>
 	
-	<div class=\"leftContent\">
-   	<h2>CT310 Federation</h2> 
-   	
-   	<table id='federation'></table>
-   	<table id='purpose' style=\"display: none\"></table>
-	</div>";
+	";
 	
 	} else {
 	

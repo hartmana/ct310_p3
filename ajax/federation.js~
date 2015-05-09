@@ -85,7 +85,7 @@ function getPurpose() {
 
 /*NOT TESTED*/
 function purposeToTable(sites, purpose) {
-    var tab = document.getElementById('purpose');
+    var tab = document.getElementById('federation');
     var i = tab.rows.length;
     for (j = 0; j < sites.length; j++) {
     	var rt = "<tr><td>" + purpose + "</td></tr>";
