@@ -20,18 +20,22 @@ include("./php/inc/header.php");
 <script type="text/javascript" src='ajax/federation.js'></script>
 
 <div class="leftContent">
+<p>
 <?php
 
 if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
 	
-	echo "<script type=\"text/javascript\">
+	echo "<table id='purpose' style=\"display: none\"></table>
+	<script type=\"text/javascript\">
 		var loggedon = '1';
 		window.onload = init;
 	</script>
 	
 	<div class=\"leftContent\">
    	<h2>CT310 Federation</h2> 
+   	
    	<table id='federation'></table>
+   	
 	</div>";
 	
 	} else {
@@ -41,8 +45,9 @@ if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
 	}
 	
 ?>
+<p>
 </div>
 
-
+<?php include_once("php/inc/rightContent.php"); ?>
 
 <?php include("php/inc/footer.php"); ?>

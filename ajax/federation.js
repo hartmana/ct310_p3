@@ -24,7 +24,7 @@ function getSites() {
     http.send(null);
 }
 
-/*NOT TESTED*/
+/*working*/
 function sitesToTable(sites) {
     var tab = document.getElementById('federation');
     var i = tab.rows.length;
@@ -66,19 +66,22 @@ function leave() {
 }
 /*NOT TESTED*/
 function getPurpose() {
-    var sites;
-    id += "purpose.php";
-    http.open("POST", id, true);
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.onreadystatechange = function () {
-        if (http.readyState == 4) {
-            sites = JSON.parse(http.responseText);
-            if (Array.isArray(sites)) {
-                purposeToTable(sites[0].purpose);
-            } else {
-                purposeToTable(sites.purpose);
-            }
-        }
+    
+    http.open("POST", url, true);
+    var sites = JSON.parse(http.responseText);
+    
+    for (i = 0; i < sites.length; i++){
+    	id = sites[i].url;
+    	http.open("POST", id, true);
+    	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    	http.onreadystatechange = function () {
+    		if (http.readyState == 4){
+    			id = JSON.parse(http.responseText);
+    			purposeToTable(id.purpose);
+    		} else {
+    			purposeToTable("Purpose not accessible!");
+    		}
+    	}
     }
     http.send(null);
 }
