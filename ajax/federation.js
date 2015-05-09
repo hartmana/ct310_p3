@@ -34,6 +34,7 @@ function sitesToTable(sites) {
         var rr = tab.insertRow(i);
         rr.innerHTML = rt;
     }
+
     if (loggedon) {
         hover();
     }
