@@ -8,3 +8,5 @@ header("Access-Control-Allow-Origin: *");
     };
     document.getElementById("purpose").innerHTML = JSONObject.purpose;
 </script>
+
+<div id="purpose"></div>
