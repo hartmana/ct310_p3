@@ -1,6 +1,7 @@
 <?php
-header('Content-Type: text/json');
 header("Access-Control-Allow-Origin: *");
+header('Content-Type: text/json');
+
 ?>
 <script>
     var JSONObject = {

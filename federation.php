@@ -23,14 +23,11 @@ include("./php/inc/header.php");
 <script type="text/javascript" src='ajax/federation.js'></script>
 
 <div class="leftContent">
-<p>
 <?php
 
 if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
 	
 	echo "
-	<div class=\"leftContent\">
-   	
    	<h2>CT310 Federation</h2> 
    	<script type=\"text/javascript\">
 		loggedon = 1;
@@ -38,7 +35,6 @@ if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
 	</script>
    	<div id=\"purpose\">Hover over a group link and the purpose will be displayed.</div>
    	<p id=\"federation\">Site name and URL</p>
-	</div>
 	
 	";
 	
@@ -49,7 +45,6 @@ if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
 	}
 	
 ?>
-<p>
 </div>
 
 <?php include_once("php/inc/rightContent.php"); ?>
