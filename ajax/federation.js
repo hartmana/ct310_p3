@@ -32,7 +32,6 @@ function getSites() {
 				}
                 site = " onmouseover=\"showPurpose(this)\" onmouseout=\"delPurpose()\"";
 				tab += '<a href="' + sites[j].url + '"' + site + '>' + sites[j].name + '</a><br>';
-                console.log(tab);
 			}
 			document.getElementById("federation").innerHTML = tab;
 		}
@@ -53,9 +52,11 @@ function showPurpose(s){
 	}
 	
 	http.open("POST", url, true);
-	http.setRequestHeader("Content-type", "text/json");
+    //http.setRequestHeader("Content-type", "text/json");
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	http.onreadystatechange = function(){
-		if (http.readyState == 4 && http.status == 200){
+        //&& http.status == 200
+        if (http.readyState == 4) {
 			var purp = JSON.parse(http.responseText);
 			
 			if(Array.isArray(purp)){
@@ -64,6 +65,7 @@ function showPurpose(s){
 				var tab = purp.purpose;
 			}
 			document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
+            console.log(tab);
 		}
 		if(http.readyState == 4 && http.status != 200){
 			document.getElementById("purpose").innerHTML = "<p> + Off limits </p>";
