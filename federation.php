@@ -23,17 +23,17 @@ include("./php/inc/header.php");
 <?php
 
 if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id'])){
-	
-	echo "
+
+    echo '
    	<h2>CT310 Federation</h2> 
-   	<script type=\"text/javascript\">
+   	<script type="text/javascript">
 		loggedon = 1;
 		window.onload = init;
 	</script>
-   	<div id=\"purpose\">Hover over a group link and the purpose will be displayed.</div>
-   	<p id=\"federation\">Site name and URL</p>
+   	<div id="purpose">Hover over a group link and the purpose will be displayed.</div>
+   	<p id="federation">Site name and URL</p>
 	
-	";
+	';
 	
 	} else {
 	
