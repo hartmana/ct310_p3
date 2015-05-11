@@ -15,6 +15,8 @@ function getSites() {
     http.open("POST", url, true);
     //http.setRequestHeader("Content-type", "text/json");
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+
     http.onreadystatechange = function () {
 		if (http.readyState == 4){
 			sites = JSON.parse(http.responseText);
@@ -55,20 +57,37 @@ function showPurpose(s){
     http.open("POST", purposeURL, true);
     //http.setRequestHeader("Content-type", "text/json");
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	http.onreadystatechange = function(){
-        //&& http.status == 200
+
+
+    http.onreadystatechange = function () {
         if (http.readyState == 4) {
-			var purp = JSON.parse(http.responseText);
+            var purpose = JSON.parse(http.responseText);
+
+            var tab = "";
+            var site = "";
+
+            console.log("Purpose!!!!!!!!!!!!!!!!!!!!!");
+            console.log(purpose.purpose);
 
 
-            var tab = purp.purpose;
+            document.getElementById("purpose").innerHTML = "PURPOSE";
+        }
 
-            document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
-            console.log(tab);
-		}
-		if(http.readyState == 4 && http.status != 200){
-			document.getElementById("purpose").innerHTML = "<p> + Off limits </p>";
-		}
+        //http.onreadystatechange = function(){
+        //
+        //
+        //   if (http.readyState === 4 && http.status === 200) {
+        //		var purp = JSON.parse(http.responseText);
+        //
+        //
+        //       var tab = purp.purpose;
+        //
+        //       document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
+        //       console.log(tab);
+        //	}
+        //	if(http.readyState === 4 && http.status !== 200){
+        //		document.getElementById("purpose").innerHTML = "<p> + Off limits </p>";
+        //	}
 		http.send(null);
 	}
 	
