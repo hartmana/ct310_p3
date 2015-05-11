@@ -12,9 +12,7 @@ function getSites() {
 		http = new XMLHttpRequest();
 	}
 
-    //http.setRequestHeader("Content-type", "text/json");
     http.open("POST", url, true);
-    //http.setRequestHeader("Content-type", "text/json");
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 

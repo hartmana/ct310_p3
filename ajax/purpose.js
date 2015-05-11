@@ -15,14 +15,10 @@ function showPurpose(site) {
     http.open("POST", url, true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-    console.log("BP");
-    console.log("URL" + url);
     http.onreadystatechange = function () {
         if (http.readyState == 4) {
+
             var purpose = JSON.parse(http.responseText);
-            console.log("Purpose: " + purpose);
-            var tab = "";
-            var site = "";
 
             document.getElementById("purpose").innerHTML = purpose.purpose;
 
