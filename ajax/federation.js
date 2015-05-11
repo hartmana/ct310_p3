@@ -14,6 +14,7 @@ function getSites() {
     //http.setRequestHeader("Content-type", "text/json");
     http.open("POST", url, true);
     //http.setRequestHeader("Content-type", "text/json");
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange = function () {
 		if (http.readyState == 4){
 			sites = JSON.parse(http.responseText);
@@ -58,14 +59,19 @@ function showPurpose(s){
         //&& http.status == 200
         if (http.readyState == 4) {
 			var purp = JSON.parse(http.responseText);
-			
-			if(Array.isArray(purp)){
-				var tab = purp[0].purpose;
-			} else {
-				var tab = purp.purpose;
-			}
-			document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
-            console.log(tab);
+
+            //if(Array.isArray(purp)){
+            //	var tab = purp.purpose;
+            //} else {
+            //	var tab = purp.purpose;
+            //}
+
+            for (var i = 0; i < purp.length; ++i) {
+                document.getElementById("purpose").innerHTML = "<p>" + purp[i].purpose + "</p>";
+            }
+
+            //document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
+            //console.log(tab);
 		}
 		if(http.readyState == 4 && http.status != 200){
 			document.getElementById("purpose").innerHTML = "<p> + Off limits </p>";
