@@ -43,7 +43,7 @@ function getSites() {
 
 function showPurpose(s){
 	var target = s.getAttribute("href");
-	var url = target + "/purpose.php";
+    var purposeURL = target + "/purpose.php";
 	var http = false;
 	
 	if (navigator.appName == "Microsoft Internet Explorer") {
@@ -51,8 +51,8 @@ function showPurpose(s){
 	} else {
 		http = new XMLHttpRequest();
 	}
-	
-	http.open("POST", url, true);
+
+    http.open("POST", purposeURL, true);
     //http.setRequestHeader("Content-type", "text/json");
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	http.onreadystatechange = function(){
@@ -60,18 +60,11 @@ function showPurpose(s){
         if (http.readyState == 4) {
 			var purp = JSON.parse(http.responseText);
 
-            //if(Array.isArray(purp)){
-            //	var tab = purp.purpose;
-            //} else {
-            //	var tab = purp.purpose;
-            //}
 
-            for (var i = 0; i < purp.length; ++i) {
-                document.getElementById("purpose").innerHTML = "<p>" + purp[i].purpose + "</p>";
-            }
+            var tab = purp.purpose;
 
-            //document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
-            //console.log(tab);
+            document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
+            console.log(tab);
 		}
 		if(http.readyState == 4 && http.status != 200){
 			document.getElementById("purpose").innerHTML = "<p> + Off limits </p>";
