@@ -18,6 +18,7 @@ include("./php/inc/header.php");
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src='ajax/federation.js'></script>
+<script type="text/javascript" src='ajax/purpose.js'></script>
 
 <div class="leftContent">
 <?php
@@ -30,7 +31,6 @@ if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
 		loggedon = 1;
 		window.onload = init;
 	</script>
-   	<div id="purpose">Hover over a group link and the purpose will be displayed.</div>
    	<p id="federation">Site name and URL</p>
 	
 	';
@@ -43,7 +43,8 @@ if (isset($_SESSION['user_name']) && $dbh->isUserLoggedIn($_SESSION['user_id']))
 	
 ?>
 </div>
+<!--<div id="purpose">Hover over a group link and the purpose will be displayed.</div>-->
 
-<?php include_once("php/inc/rightContent.php"); ?>
+<?php include_once("php/inc/purposeContent.php"); //include_once("php/inc/rightContent.php"); ?>
 
 <?php include("php/inc/footer.php"); ?>

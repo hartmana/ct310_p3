@@ -3,6 +3,7 @@ var http = false;
 var id;
 var sites;
 
+
 function getSites() {
 	
 	if (navigator.appName == "Microsoft Internet Explorer") {
@@ -43,59 +44,59 @@ function getSites() {
     
 }
 
-function showPurpose(s){
-	var target = s.getAttribute("href");
-    var purposeURL = target + "/purpose.php";
-	var http = false;
-	
-	if (navigator.appName == "Microsoft Internet Explorer") {
-		http = new ActiveXObject("Microsoft.XMLHTTP");
-	} else {
-		http = new XMLHttpRequest();
-	}
+//function showPurpose(s){
+//	var target = s.getAttribute("href");
+//    var purposeURL = target + "/purpose.php";
+//	var http = false;
+//
+//	if (navigator.appName == "Microsoft Internet Explorer") {
+//		http = new ActiveXObject("Microsoft.XMLHTTP");
+//	} else {
+//		http = new XMLHttpRequest();
+//	}
+//
+//    http.open("POST", purposeURL, true);
+//    http.setRequestHeader("Content-type", "text/json");
+//    //http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//
+//
+//    http.onreadystatechange = function () {
+//        if (http.readyState == 4) {
+//            var purpose = JSON.parse(http.responseText);
+//
+//            var tab = "";
+//            var site = "";
+//
+//            console.log("Purpose!!!!!!!!!!!!!!!!!!!!!");
+//            console.log(purpose.purpose);
+//
+//
+//            document.getElementById("purpose").innerHTML = "PURPOSE";
+//        }
+//
+//        //http.onreadystatechange = function(){
+//        //
+//        //
+//        //   if (http.readyState === 4 && http.status === 200) {
+//        //		var purp = JSON.parse(http.responseText);
+//        //
+//        //
+//        //       var tab = purp.purpose;
+//        //
+//        //       document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
+//        //       console.log(tab);
+//        //	}
+//        //	if(http.readyState === 4 && http.status !== 200){
+//        //		document.getElementById("purpose").innerHTML = "<p> + Off limits </p>";
+//        //	}
+//		http.send(null);
+//	}
+//
+//}
 
-    http.open("POST", purposeURL, true);
-    //http.setRequestHeader("Content-type", "text/json");
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-
-    http.onreadystatechange = function () {
-        if (http.readyState == 4) {
-            var purpose = JSON.parse(http.responseText);
-
-            var tab = "";
-            var site = "";
-
-            console.log("Purpose!!!!!!!!!!!!!!!!!!!!!");
-            console.log(purpose.purpose);
-
-
-            document.getElementById("purpose").innerHTML = "PURPOSE";
-        }
-
-        //http.onreadystatechange = function(){
-        //
-        //
-        //   if (http.readyState === 4 && http.status === 200) {
-        //		var purp = JSON.parse(http.responseText);
-        //
-        //
-        //       var tab = purp.purpose;
-        //
-        //       document.getElementById("purpose").innerHTML = "<p>" + tab + "</p>";
-        //       console.log(tab);
-        //	}
-        //	if(http.readyState === 4 && http.status !== 200){
-        //		document.getElementById("purpose").innerHTML = "<p> + Off limits </p>";
-        //	}
-		http.send(null);
-	}
-	
-}
-
-function delPurpose(){
-	document.getElementById("purpose").innerHTML = "<p>Hover over a site name and their purpose will come up.</p>";
-}
+//function delPurpose(){
+//	document.getElementById("purpose").innerHTML = "Hover over a site name and their purpose will come up.";
+//}
 
 /*working
 function sitesToTable(sites) {
