@@ -10,25 +10,29 @@ function getSites() {
 	} else {
 		http = new XMLHttpRequest();
 	}
-	
+
+    //http.setRequestHeader("Content-type", "text/json");
     http.open("POST", url, true);
-    http.setRequestHeader("Content-type", "text/json");
-    http.onreadstatechange = function(){
+    //http.setRequestHeader("Content-type", "text/json");
+    http.onreadystatechange = function () {
 		if (http.readyState == 4){
 			sites = JSON.parse(http.responseText);
 			var tab = "";
 			var site = "";
-			for (j = 0; j < sites.length; j++){
-			
-				if(sites[j].url.startsWith("https")){
+            for (var j = 0; j < sites.length; j++) {
+
+                // startsWith not a function
+
+                if (sites[j].url.substr(0, 4) == "https") {
 					var addr = sites[j].url.substring(5, sites[j].url.length);
 					sites[j].url = "http" + addr;
 				}
-				if(!sites[j].url.startsWith("http")){
+                else if (sites[j].url.substr(0, 3) == "http") {
 					sites[j].url = "http://" + sites[j].url;
-				}							
-				site = "onmouseover=\"showPurpose(this)\" onmouseout=\"delPurpose()\"";
+				}
+                site = " onmouseover=\"showPurpose(this)\" onmouseout=\"delPurpose()\"";
 				tab += '<a href="' + sites[j].url + '"' + site + '>' + sites[j].name + '</a><br>';
+                console.log(tab);
 			}
 			document.getElementById("federation").innerHTML = tab;
 		}

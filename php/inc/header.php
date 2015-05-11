@@ -81,5 +81,4 @@ $dbh = new DBHelper();
         </div>
     </header>
     <main>
-        <div class="content">
 		
